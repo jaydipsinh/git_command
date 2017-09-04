@@ -1,0 +1,222 @@
+--------------------------------------------------------------
+==============================================================
+Getting Help:
+==============================================================
+
+$ git help
+$ git help command 	or
+$ git command --help 	Show help for a command 
+--------------------------------------------------------------
+
+==============================================================
+git config (Your Identity) 
+==============================================================
+Sets configuration values for your user name, email and more. 
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+other
+color.status=auto,color.branch=auto,color.interactive=auto,color.diff=auto
+--------------------------------------------------------------
+
+==============================================================
+Repository creation:
+==============================================================
+$ git init
+Create a repository in the current directory
+
+$ git clone url 	
+Clone a remote repository into a subdirectory 
+
+e.g.
+$ git clone git@xxx.xxx.xxx.xxx:/home/git/symfony_test.git
+Password: password
+
+--------------------------------------------------------------
+
+==============================================================
+File operations: 	
+==============================================================
+$ git add path
+Add file or files in directory recursively
+
+$ git rm path 
+(if you using rm command and push then it will delete from server repository.)	
+Remove file or directory from the working tree
+
+$git mv path destination 	
+Move file or directory to new location 
+
+$ git checkout [rev] file 	
+Restore file from current branch or revision
+
+--------------------------------------------------------------
+
+==============================================================
+Working tree: 	
+==============================================================
+
+$ git status 	
+Show status of the working tree
+
+$ git diff [path] 	
+Show diff of changes in the working tree
+
+$ git reset HEAD path 	
+Unstage file for commit
+
+$ git commit -m 'comment'
+Commit files that has been staged (with git-add)
+
+$ git reset --soft HEAD^ 	
+Undo commit & keep changes in the working tree
+
+$ git reset --hard HEAD^ 	
+Reset the working tree to the last commit
+
+--------------------------------------------------------------
+
+==============================================================
+History:
+==============================================================
+
+$ git log [path] 	
+View commit log, optionally for specific path 
+
+--------------------------------------------------------------
+
+==============================================================
+Remote repositories - remotes: 	
+==============================================================
+
+$ git pull = PULL all branches
+$ git pull origin branchname - pull specific branch
+
+$ git pull [remote] 	
+Fetch and merge changes from a remote repository
+
+
+$ git push origin branchname --push specific branch
+
+$ git push [remote] 	
+Push changes to a remote repository
+
+$ git remote 	
+List remote repositories
+
+--------------------------------------------------------------
+
+==============================================================
+Branches: 	
+==============================================================
+
+$ git checkout branch
+Switch working tree to branch
+
+$ git branch 	
+List local branches
+
+$ git merge branch 	
+Merge changes from branch 
+eg: two branch test1(test1.txt) & test2(test2.txt)
+you are in branch test2 and merge test1 then in branch test2(test1.txt,test2.txt)
+
+$ git rebase branch (test4)
+F:\jaydipsinh\test_eg_git>git checkout test5
+Switched to branch 'test5'
+F:\jaydipsinh\test_eg_git>git rebase test4
+First, rewinding head to replay your work on top of it...
+Applying: test 5
+
+
+--------------------------------------------------------------
+
+==============================================================
+Temperory save
+==============================================================
+$ git stash  (and $git stash apply =>for again apply originaly backup)
+
+Temporarily saves changes that you don’t want to commit immediately. You can apply the changes later. 
+
+--------------------------------------------------------------
+==============================================================
+search
+==============================================================
+$git grep 
+
+e.g. git grep -a "test" test.txt
+search test word from test.txt file
+
+--------------------------------------------------------------
+==============================================================
+To remove a local branch from your machine:
+==============================================================
+git branch -d test_branch(branch name)
+
+To remove a remote branch:
+
+git push origin :test_branch(branch name)
+
+==============================================================
+File status flags: 	
+==============================================================
+M modified 	File has been modified
+C copy-edit 	File has been copied and modified
+R rename-edit 	File has been renamed and modified
+A added 	File has been added
+D deleted 	File has been deleted
+U unmerged 	File has conflicts after a merge 
+--------------------------------------------------------------
+
+==============================================================
+Set up SSH for Git
+==============================================================
+
+ssh key generat
+http://git-scm.com/book/en/Git-on-the-Server-Generating-Your-SSH-Public-Key
+
+https://bitbucket.org/
+https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git
+--------------------------------------------------------------
+Clone your new repo
+
+Set up Git on your machine if you haven't already.
+
+mkdir /path/to/your/project
+cd /path/to/your/project
+git init
+git remote add origin ssh://git@bitbucket.org/jaydipsinh/test_eg.git
+Make changes and push
+--------------------------------------------------------------
+Every project needs a README file. Your README appears on the project Overview page and 
+
+introduces your project.
+
+echo "# This is my README" >> README.md
+git add README.md
+git commit -m "First commit. Adding a README."
+git push -u origin master
+--------------------------------------------------------------
+
+==============================================================
+Most commonly used command
+==============================================================
+Clone GIT Repository:
+git clone git@xxx.xxx.xxx:/home/git/nitione_symfony.git
+Password: pwd
+
+
+git pull = PULL all branches
+git pull origin branchname - pull specific branch
+git branch - see local branch listing
+
+To commit/save
+git add fiel name
+git commit -m 'comment'
+
+To send your changes to server
+git push origin branchname
+
+
+to change branch
+git checkout branchname
